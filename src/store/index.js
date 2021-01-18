@@ -5,8 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    tabList: []
   },
   mutations: {
+    login(state,item){
+      // console.log(item);
+      
+      state.tabList = item
+    }
   },
   actions: {
   },
