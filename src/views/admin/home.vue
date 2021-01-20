@@ -44,7 +44,7 @@
                 :index="'/' + subItem.path"
                 v-for="subItem in item.children"
                 :key="subItem.id"
-                @click="saveNavState('/' + subItem.path)"
+                @click="breadmenu(item.authName,subItem.authName)"
               >
                 <template slot="title">
                   <!-- 图标 -->
@@ -112,10 +112,12 @@ export default {
     toggleCollapse() {
       this.isCollapse = !this.isCollapse;
     },
-    // 保存链接的激活状态
-    saveNavState(activePath){
-        window.sessionStorage.setItem('activePath',activePath)
-        this.activePath = activePath
+     //面包屑
+    breadmenu(name1,name2){
+      var obj={'one':name1,'two':name2}
+      console.log(obj);
+      
+      sessionStorage.setItem('path',JSON.stringify(obj))
     }
   },
   // 计算属性

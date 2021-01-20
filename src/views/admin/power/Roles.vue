@@ -1,11 +1,7 @@
 <template>
   <div>
     <!-- 面包屑导航区域 -->
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-      <el-breadcrumb-item>角色列表</el-breadcrumb-item>
-    </el-breadcrumb>
+    <Brea />
 
     <!-- 卡片视图 -->
     <el-card>
@@ -166,7 +162,9 @@
 </template>
 
 <script>
+import Brea from "../Brea/brea";
 export default {
+  components: { Brea },
   data() {
     return {
       //  所有角色列表数据
@@ -317,10 +315,7 @@ export default {
       this.getRolesList();
       this.setRightDialogVisible = false;
     },
-    // 监听添加用户对话框的关闭事件
-    // addDialogClased() {
-    //   this.$refs.addFormRef.resetFields();
-    // },
+
     // 点击按钮，添加用户
     addUser() {
       this.$refs.addFormRef.validate(async valid => {
@@ -348,21 +343,21 @@ export default {
 
       this.editDialogVisible = true;
     },
-    // 监听修改用户对话框的关闭事/件
-    // editDialogClosed(){
-    //   this.$refs.editFormRef.resetFields()
-    // },
+
     // 修改用户信息并提交
     editUserInfo() {
       this.$refs.editFormRef.validate(async valid => {
         console.log(valid);
         if (!valid) return;
         // 发起修改用户信息的数据请求
-        var obj={
-          roleName:this.editForm.roleName,
-          roleDesc:this.editForm.roleDesc
-        }
-        const { data: res } = await this.$http.put(`roles/${this.editForm.id}`,obj);
+        var obj = {
+          roleName: this.editForm.roleName,
+          roleDesc: this.editForm.roleDesc
+        };
+        const { data: res } = await this.$http.put(
+          `roles/${this.editForm.id}`,
+          obj
+        );
 
         if (res.meta.status !== 200) {
           return this.$message.error("更新用户信息失败");

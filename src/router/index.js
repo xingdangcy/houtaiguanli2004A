@@ -43,6 +43,26 @@ const routes = [
         path:'/roles',
         name: 'roles',
         component: () => import('../views/admin/power/Roles'),
+      },
+      {
+        path:'/goods',
+        name: 'goods',
+        component: () => import('../views/admin/Product/Goods'),
+      },
+      {
+        path:'/params',
+        name: 'params',
+        component: () => import('../views/admin/Product/Params'),
+      },
+      {
+        path:'/categories',
+        name: 'categories',
+        component: () => import('../views/admin/Product/Categories'),
+      },
+      {
+        path:'/goods/add',
+        name: 'add',
+        component: () => import('../views/admin/Product/Add'),
       }
     ]
   },
