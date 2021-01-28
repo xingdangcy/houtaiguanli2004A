@@ -61,8 +61,9 @@
                   type="primary"
                   icon="el-icon-edit"
                   @click="showEdit(scope.row.attr_id)"
+                  size="mini"
                 >修改</el-button>
-                <el-button type="danger" icon="el-icon-delete" @click="del(scope.row.attr_id)">删除</el-button>
+                <el-button type="danger" icon="el-icon-delete" @click="del(scope.row.attr_id)" size="mini">删除</el-button>
               </template>
             </el-table-column>
           </el-table>

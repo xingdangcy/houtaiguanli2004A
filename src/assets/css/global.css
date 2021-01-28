@@ -29,3 +29,15 @@ body,
 .el-step__title{
   font-size: 13px;
 }
+.ql-editor{
+  min-height: 300px;
+}
+.box{
+  background:#f4f4f5;
+  height: 35px;
+}
+.box>  p{
+  text-align: center;
+  line-height: 35px;
+  color:#909399;
+}

@@ -63,6 +63,11 @@ const routes = [
         path:'/goods/add',
         name: 'add',
         component: () => import('../views/admin/Product/Add'),
+      },
+      {
+        path:'/orders',
+        name: 'orders',
+        component: () => import('../views/admin/order/orders'),
       }
     ]
   },
